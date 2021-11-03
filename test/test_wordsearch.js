@@ -35,4 +35,26 @@ describe("#wordSearch()", function() {
 
     assert.isTrue(result);
   });
+  it("should return true if the word is present vertically", function() {
+    const result = wordSearch([
+      ['F', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['R', 'E', 'I', 'N', 'F', 'E', 'L', 'D'],
+      ['A', 'F', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['N', 'M', 'J', 'T', 'E', 'V', 'R', 'G'],
+      ['K', 'H', 'C', 'S', 'Y', 'E', 'R', 'L'],
+      ['L', 'F', 'R', 'E', 'N', 'E', 'Y', 'B'],
+      ['I', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+      ['N', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['G', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'FRANK')
+
+    assert.isTrue(result);
+  });
+  it("should return false with empty array", function() {
+    const result = wordSearch([
+      [],
+    ], 'FRANKLING')
+
+    assert.isFalse(result);
+  });
 });
